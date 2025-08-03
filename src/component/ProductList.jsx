@@ -15,7 +15,7 @@ const ProductList = () => {
 
   if (loading) return <Loader />;
   if (error) return <ErrorPage message={error} />;
-
+  //this displays actual list on home page 
   return (
     <div className="product-list">
       {filteredProducts.length > 0 ? (

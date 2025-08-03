@@ -18,7 +18,7 @@ const CheckoutPage = () => {
   const [formData, setFormData] = useState({ email: "", phone: "", address: "" });
   const [errors, setErrors] = useState({});
   const [addressSaved, setAddressSaved] = useState(false);
-
+  // performing validation if the form data of billing info is correct . its basic as of now
   const validateForm = () => {
     const newErrors = {};
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Valid email is required";
@@ -27,7 +27,7 @@ const CheckoutPage = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  //detects the change in billing info form and sets the state accordingly 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -43,7 +43,7 @@ const CheckoutPage = () => {
 
   const handlePlaceOrder = () => {
     toast.success("Order Placed Successfully! 🎉");
-    dispatch(clearCart()); // ✅ Clear cart
+    dispatch(clearCart()); //  Clear cart
     setTimeout(() => {
       navigate("/");
     }, 2000); // Redirect after 2s
@@ -66,6 +66,7 @@ const CheckoutPage = () => {
           </div>
         ))}
       </div>
+      {/* converting the Dollars into Rupees where ever needed */}
 
       <div className="order-summary">
         <h3>Total Amount:  ₹{(Math.round(totalAmount * 80 * 100) / 100)}</h3>

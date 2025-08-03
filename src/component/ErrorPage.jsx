@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ErrorPage.css";
-
+// Error page it is for Api errors 
 const ErrorPage = ({ message }) => {
   return (
     <div className="error-container">

@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { setSearchQuery } from "../redux/searchSlice";
 import "./Header.css";
-
+// IT then navbar bar for complete app 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);

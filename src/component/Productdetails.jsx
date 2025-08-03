@@ -55,8 +55,8 @@ const ProductDetail = () => {
     );
   };
 
-  if (loading) return <Loader />;
-  if (error) return <ErrorPage/>;
+  if (loading) return <Loader />;//if its taking more then usual then loading spinner will render 
+  if (error) return <ErrorPage/>;//if any error then this error page will , error from API not for the paths that are not defined in react router file
   if (!product) return null;
 
   return (

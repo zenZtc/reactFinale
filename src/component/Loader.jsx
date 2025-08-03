@@ -1,6 +1,6 @@
 // src/components/Loader.jsx
 import "./Loader.css";
-
+//loader render when it takes more time than usual 
 const Loader = () => {
   return (
     <div className="loader-container">
