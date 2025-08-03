@@ -3,11 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../redux/cartSlice"; // adjust path if needed
 import 'react-toastify/dist/ReactToastify.css';
 import "./CheckoutPage.css";
 
 const CheckoutPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
   const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const navigate = useNavigate();
 
@@ -40,6 +43,7 @@ const CheckoutPage = () => {
 
   const handlePlaceOrder = () => {
     toast.success("Order Placed Successfully! 🎉");
+    dispatch(clearCart()); // ✅ Clear cart
     setTimeout(() => {
       navigate("/");
     }, 2000); // Redirect after 2s
@@ -57,14 +61,14 @@ const CheckoutPage = () => {
             <div className="item-details">
               <h3>{item.title}</h3>
               <p>Qty: {item.quantity}</p>
-              <p>Price: ₹{80*(item.price * item.quantity)}</p>
+              <p>Price: ₹{(Math.round(item.price * item.quantity * 80 * 100) / 100)}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="order-summary">
-        <h3>Total Amount: ₹{totalAmount*80}</h3>
+        <h3>Total Amount:  ₹{(Math.round(totalAmount * 80 * 100) / 100)}</h3>
 
         {/* Display Address if saved */}
         {addressSaved ? (

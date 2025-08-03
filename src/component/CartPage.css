@@ -47,7 +47,7 @@
   text-align: center;
   transition: background 0.3s ease, transform 0.2s ease;
   text-decoration: none;
-  /* ✅ Remove underline */
+  
 }
 
 .checkout-btn:hover {

@@ -38,7 +38,7 @@ const CartPage = () => {
             <img src={item.thumbnail} alt={item.title} />
             <div className="item-info">
               <h3>{item.title}</h3>
-              <p>₹{(Math.round(totalAmount*80*100)/100) }</p>
+              <p>₹{(Math.round(item.price*item.quantity*80*100)/100) }</p>
               <div className="quantity-actions">
                 <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
                 <input
