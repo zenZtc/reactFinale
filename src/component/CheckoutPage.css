@@ -1,0 +1,253 @@
+.checkout-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Modal Overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.address-modal {
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.address-form input,
+.address-form textarea {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.save-address-btn {
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.save-address-btn:hover {
+    background: #1e7e34;
+}
+
+/* Disable Place Order if modal is open */
+.place-order-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.checkout-container h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #222;
+}
+
+.checkout-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+.checkout-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.item-details p {
+    margin: 4px 0;
+    color: #555;
+}
+
+.order-summary {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.order-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.address-section {
+    margin-bottom: 20px;
+}
+
+.address-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.place-order-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.place-order-btn:hover {
+    background: linear-gradient(135deg, #1e7e34, #146c2f);
+    transform: translateY(-2px);
+}
+
+.empty-checkout {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.back-home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: #0056b3;
+}
+
+
+
+.update-billing-btn {
+  padding: 12px 20px;
+  background: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.update-billing-btn:hover {
+  background: #117a8b;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 10; 
+}
+
+.place-order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.saved-address {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.saved-address h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.address-warning {
+  color: red;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .checkout-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkout-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .order-summary {
+        text-align: center;
+    }
+
+    .place-order-btn {
+        width: 100%;
+    }
+}

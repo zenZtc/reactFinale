@@ -1,0 +1,130 @@
+/* src/components/NotFound.css */
+.nf-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  /* Theme Matching Gradient */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.nf-animation {
+  display: flex;
+  align-items: center;
+  font-size: 8rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.nf-digit {
+  font-size: inherit;
+  color: #ffffff;
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nf-planet {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ffd200, #f7971e);
+  border-radius: 50%;
+  position: relative;
+  animation: rotatePlanet 6s linear infinite;
+  box-shadow: 0 0 25px rgba(255, 210, 0, 0.6);
+}
+
+
+@keyframes rotatePlanet {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.nf-container h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+
+.nf-container p {
+  font-size: 1.2rem;
+  margin: 12px 0 24px;
+  max-width: 500px;
+}
+
+.nf-btn {
+  padding: 14px 32px;
+  background: #ffffff;
+  color: #4e54c8;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nf-btn:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nf-animation {
+    font-size: 6rem;
+  }
+
+  .nf-planet {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nf-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nf-animation {
+    font-size: 5rem;
+  }
+
+  .nf-planet {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nf-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .nf-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nf-animation {
+    font-size: 4rem;
+  }
+
+  .nf-planet {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nf-btn {
+    width: 100%;
+  }
+}
